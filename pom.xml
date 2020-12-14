@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.watchguard.hawkeyeg</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.91-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.watchguard.hawkeyeg.system-info-changed</groupId>
+    <artifactId>system-info-changed-webapp</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <license.file.template>${basedir}/../../conf/third-party-file.ftl</license.file.template>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.watchguard.hawkeyeg.cloud</groupId>
+            <artifactId>cloud-web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.watchguard.hawkeyeg.analytics-engine</groupId>
+            <artifactId>analytics-engine-shared</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- provided -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <!-- testing -->
+        <dependency>
+            <groupId>com.watchguard.hawkeyeg.common</groupId>
+            <artifactId>common-core</artifactId>
+            <version>${project.version}</version>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.watchguard.hawkeyeg.common</groupId>
+            <artifactId>common-common</artifactId>
+            <version>${project.version}</version>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.watchguard.hawkeyeg.cloud</groupId>
+            <artifactId>cloud-database</artifactId>
+            <version>${project.version}</version>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
